@@ -1,28 +1,84 @@
 # Nexora Digital
 
-Nexora Digital is a five-page static digital agency website built with semantic HTML, CSS, and vanilla JavaScript. The project includes responsive page layouts, consistent navigation and footer markup, interactive project filters, FAQs, and a contact form prepared for Netlify Forms.
+### Modern Digital Agency Website
 
-The portfolio showcases illustrative demonstration concepts. They are not verified client projects.
+Nexora Digital is a modern, responsive, professional digital agency website built with **HTML5, CSS3, and Vanilla JavaScript**. It presents Nexora Digital's services, company information, project concepts, and contact system through a clean, accessible interface.
+
+<p align="center">
+  <a href="https://nexora-digital.netlify.app">
+    <img src="https://img.shields.io/badge/Live%20Website-Visit%20Now-EA4335?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Website">
+  </a>
+  <a href="https://github.com/Sauban1222/Nexora-Digital">
+    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository">
+  </a>
+</p>
+
+---
+
+## Live Demo
+
+- **Live Website:** <https://nexora-digital.netlify.app>
+- **GitHub Repository:** <https://github.com/Sauban1222/Nexora-Digital>
+
+---
+
+## Project Overview
+
+Nexora Digital is a multi-page digital agency website designed to provide a professional online presence.
+
+The website focuses on modern UI design, responsive layouts, smooth navigation, interactive components, and an accessible contact experience across desktop, tablet, and mobile devices.
+
+---
 
 ## Features
 
-- Five pages: Home, About, Services, Portfolio, and Contact.
-- Shared responsive navigation with page-aware active states.
-- Reusable CSS design system and responsive layouts.
-- Portfolio category filters for demonstration concepts.
-- FAQ accordions and scroll-reveal animations with reduced-motion support.
-- Contact form with client-side validation and a honeypot field.
-- Netlify Forms attributes on the contact form; actual delivery requires deployment and verification.
+- Modern, professional interface.
+- Fully responsive design.
+- Five individual pages.
+- Shared navigation and footer.
+- Active page navigation indicators.
+- Mobile navigation menu.
+- Professional service presentation.
+- Portfolio project gallery with category filtering.
+- Contact information with email, phone, and WhatsApp links.
+- Netlify Forms-ready inquiry form.
+- Inline validation and submission feedback.
+- Honeypot spam protection.
+- Search engine optimization metadata.
+- Open Graph social sharing metadata.
+- Custom website logo and favicon.
+- Smooth animations and hover effects.
+- Reduced-motion support.
 
-## Technologies
+---
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
+## Website Pages
 
-No frameworks, package manager, or build step are required.
+| Page | Description |
+|---|---|
+| Home | Agency introduction, hero section, services, and business highlights. |
+| About | Company approach, values, story, and working process. |
+| Services | Digital service categories and detailed solution areas. |
+| Portfolio | Representative project concepts with category filters. |
+| Contact | Contact details and project inquiry form. |
 
-## Project structure
+---
+
+## Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| HTML5 | Semantic page structure and content |
+| CSS3 | Styling, responsive layouts, and animations |
+| Vanilla JavaScript | Navigation, filtering, FAQs, reveals, and form behavior |
+| Netlify | Website hosting and form handling |
+| Git and GitHub | Version control and source management |
+
+No frontend framework or JavaScript library is required.
+
+---
+
+## Project Structure
 
 ```text
 Nexora-Digital/
@@ -39,71 +95,156 @@ Nexora-Digital/
 │   ├── main.js
 │   ├── form.js
 │   └── animations.js
-├── README.md
-└── assets/
-    ├── images/
-    │   ├── E Commerce.png
-    │   ├── Expense Tracker.png
-    │   ├── Landing page.png
-    │   ├── Logo.jpg
-    │   ├── Portfolio.png
-    │   ├── User Management System.png
-    │   └── Buissness.png
-    ├── icons/
-    │   └── Icon.jpg
-    └── fonts/    (currently empty)
+├── assets/
+│   ├── images/
+│   │   ├── Logo.jpg
+│   │   ├── E Commerce.png
+│   │   ├── Expense Tracker.png
+│   │   ├── Landing page.png
+│   │   ├── Portfolio.png
+│   │   ├── User Management System.png
+│   │   └── Buissness.png
+│   ├── icons/
+│   │   └── Icon.jpg
+│   └── fonts/
+└── README.md
 ```
 
-The Business image currently has a visible stock watermark and is not used in the Portfolio gallery. Review screenshot contents for personal or sample account data before publishing. Git does not retain the empty `icons/` and `fonts/` directories until actual files are added.
+Empty asset directories are included in the project structure; Git may not preserve an empty `fonts/` directory.
 
-## Installation
+---
 
-There are no dependencies to install. Clone or download the repository, then use the local preview instructions below.
+## Responsive Design
 
-## Local preview
+The website is optimized for mobile devices, tablets, laptops, desktop computers, and large displays.
 
-From the project root, start Python's built-in static server:
+Tested viewport widths include 320px, 375px, 576px, 768px, 991px, 992px, 1280px, and 1440px.
 
-```powershell
-py -m http.server 8000
+---
+
+## Contact System
+
+The contact form is configured for **Netlify Forms**. It includes:
+
+- Required field validation.
+- Email format validation.
+- Inline error feedback.
+- Loading and duplicate-submission protection.
+- A Netlify honeypot field.
+- Truthful local-preview and submission status messages.
+
+**Developer contact information**
+
+- **Name:** Sauban Ali
+- **Email:** [developersauban12@outlook.com](mailto:developersauban12@outlook.com)
+- **Phone / WhatsApp:** [+92 313 5568768](tel:+923135568768)
+- **Availability:** Remote – Worldwide
+
+### Netlify email notifications
+
+Email notifications are configured in the Netlify dashboard, not in frontend source code:
+
+1. Deploy the site with Netlify Forms enabled.
+2. Open the site's **Forms** or **Site configuration → Forms** settings.
+3. Add an email notification for form `nexora-contact`.
+4. Use `developersauban12@outlook.com` as the recipient.
+5. Submit a test inquiry and verify that it appears in Netlify Forms and reaches the configured inbox.
+
+Actual email delivery must be confirmed through a deployed submission. It should not be assumed based on a successful frontend response alone.
+
+---
+
+## Installation and Local Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Sauban1222/Nexora-Digital.git
 ```
 
-If the `py` launcher is unavailable, use `python -m http.server 8000`. Python 3 must be installed for either command. Then open <http://localhost:8000/>. Stop the server with `Ctrl+C`.
+### 2. Navigate to the project folder
 
-The contact form does not deliver messages from a local preview. Avoid opening the pages with a `file://` URL when testing the site.
-
-## GitHub
-
-Create an empty repository on GitHub, then run these commands from the project root, replacing `OWNER` and `REPOSITORY` with the account and repository you created:
-
-```powershell
-git init
-git add .
-git commit -m "Initial Nexora Digital website"
-git branch -M main
-git remote add origin "https://github.com/OWNER/REPOSITORY.git"
-git push -u origin main
+```bash
+cd Nexora-Digital
 ```
 
-These are instructions only; this project has not been initialized, committed, or pushed by this setup.
+### 3. Open the project
 
-## Netlify deployment
+Open `index.html` directly in a browser, or use a local static server such as VS Code Live Server.
 
-1. Import the GitHub repository into Netlify.
-2. Leave the build command empty and set the publish directory to the project root (`.`).
-3. Before production, replace every `https://nexora-digital.example` canonical and Open Graph URL in the five HTML files with the verified production origin.
-4. Enable Netlify form detection for the site and redeploy so Netlify can detect the form.
-5. In the Netlify site dashboard, open **Forms** (or **Site configuration → Forms**) and add an **Email notification** for the `nexora-contact` form to `developersauban12@outlook.com`.
-6. Submit a test inquiry on the deployed site and confirm it appears in Netlify Forms and the notification reaches the configured inbox.
+For a local HTTP preview, use any static server available in your development environment.
 
-The Contact form uses `name="nexora-contact"`, `method="POST"`, `data-netlify="true"`, a matching hidden `form-name` input, and the `bot-field` honeypot. It also submits a client-generated UTC timestamp; Netlify records its own submission timestamp as well. Notification recipients are configured in the Netlify dashboard, not in this repository. The form is prepared for Netlify, but message capture and notification delivery have not been verified on a deployed site.
+The contact form does not deliver email inquiries from a local preview. Deploy it to Netlify to test form capture.
 
-No `netlify.toml` is required for this static site with no build step or custom routing. No credentials or form-provider keys are stored in the project.
+---
 
-## SEO and production notes
+## Deployment
 
-- Each page has a distinct title and description, a canonical URL, and Open Graph title, description, type, URL, site name, and locale metadata.
-- The `.example` hostname is reserved for documentation and is only a placeholder. Replace it on every page before deployment; do not publish it as the canonical production domain.
-- No Open Graph image is configured because the project does not include a dedicated, approved share image.
-- Home and About use remote Unsplash images. They loaded during local browser checks, but require a network connection.
-- The CSS font stack names Inter with system fallbacks. No Inter font file is currently included or loaded.
+This project is deployed with Netlify.
+
+To deploy your own copy:
+
+1. Fork or clone the GitHub repository.
+2. Sign in to Netlify.
+3. Import the repository from GitHub.
+4. Set the publish directory to the project root.
+5. Leave the build command empty.
+6. Deploy the website.
+7. Configure Netlify Forms email notifications as described above.
+
+No `netlify.toml` or build system is required for this static project.
+
+---
+
+## SEO and Optimization
+
+- Page-specific titles and descriptions.
+- Canonical URL metadata.
+- Open Graph metadata.
+- Semantic HTML structure.
+- Alt text for meaningful images.
+- Responsive CSS layouts.
+- Local asset references.
+- Reduced-motion support.
+
+Before production, replace the reserved `.example` canonical and Open Graph URLs with the final verified domain.
+
+---
+
+## Project Goals
+
+- Develop a professional multi-page website.
+- Apply modern frontend development practices.
+- Build responsive, reusable layouts.
+- Implement JavaScript-based interactions.
+- Present project concepts clearly.
+- Prepare a reliable Netlify contact system.
+- Deploy a static website through GitHub and Netlify.
+
+---
+
+## Developer
+
+**Sauban Ali**
+
+Full Stack Web Developer | Frontend Developer
+
+- **GitHub:** [@Sauban1222](https://github.com/Sauban1222)
+- **Portfolio:** [Visit Portfolio](https://sauban-professional-portfolio.netlify.app)
+- **Email:** [developersauban12@outlook.com](mailto:developersauban12@outlook.com)
+
+---
+
+## License
+
+This project is available for educational and portfolio purposes. Contact the developer before redistributing or commercially reusing project assets.
+
+---
+
+<p align="center">
+  <b>Designed and Developed by Sauban Ali</b>
+  <br>
+  Building Digital Experiences with Creativity and Code.
+  <br><br>
+  ⭐ If you like this project, consider giving the repository a star!
+</p>
