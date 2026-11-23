@@ -5,7 +5,7 @@
 Nexora Digital is a modern, responsive, professional digital agency website built with **HTML5, CSS3, and Vanilla JavaScript**. It presents Nexora Digital's services, company information, project concepts, and contact system through a clean, accessible interface.
 
 <p align="center">
-  <a href="https://nexora-digital.netlify.app">
+  <a href="https://ne-xora-digital.netlify.app">
     <img src="https://img.shields.io/badge/Live%20Website-Visit%20Now-EA4335?style=for-the-badge&logo=netlify&logoColor=white" alt="Live Website">
   </a>
   <a href="https://github.com/Sauban1222/Nexora-Digital">
@@ -17,7 +17,7 @@ Nexora Digital is a modern, responsive, professional digital agency website buil
 
 ## Live Demo
 
-- **Live Website:** <https://nexora-digital.netlify.app>
+- **Live Website:** <https://ne-xora-digital.netlify.app>
 - **GitHub Repository:** <https://github.com/Sauban1222/Nexora-Digital>
 
 ---
