@@ -1,0 +1,232 @@
+.animate-fade-in,
+.animate-slide-up,
+.animate-slide-left,
+.animate-slide-right,
+.animate-scale-in {
+  animation-duration: 650ms;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.animate-fade-in {
+  animation-name: fade-in;
+}
+
+.animate-slide-up {
+  animation-name: slide-up;
+}
+
+.animate-slide-left {
+  animation-name: slide-left;
+}
+
+.animate-slide-right {
+  animation-name: slide-right;
+}
+
+.animate-scale-in {
+  animation-name: scale-in;
+}
+
+.animate-delay-1 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-2 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-3 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-4 {
+  animation-delay: 400ms;
+}
+
+.hover-lift,
+.hover-scale,
+.hover-glow,
+.hover-underline {
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.hover-scale:hover {
+  transform: scale(1.025);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 12px 36px rgba(66, 99, 235, 0.18);
+}
+
+.hover-underline {
+  position: relative;
+}
+
+.hover-underline::after {
+  position: absolute;
+  right: 0;
+  bottom: -0.25rem;
+  left: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-base);
+}
+
+.hover-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.motion-enabled .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 650ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 650ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.motion-enabled .reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-enabled .service-card:nth-child(3n + 2),
+.motion-enabled .project-card:nth-child(3n + 2),
+.motion-enabled .testimonial-card:nth-child(3n + 2) {
+  transition-delay: 80ms;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-up,
+  .animate-slide-left,
+  .animate-slide-right,
+  .animate-scale-in {
+    animation: none;
+  }
+
+  .hover-lift,
+  .hover-scale,
+  .hover-glow,
+  .hover-underline {
+    transition: none;
+  }
+
+  .hover-lift:hover,
+  .hover-scale:hover {
+    transform: none;
+  }
+
+  .hover-underline::after {
+    transition: none;
+  }
+
+  .motion-enabled .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .floating-note {
+    animation: none;
+  }
+
+  .btn,
+  .card--interactive,
+  .project-image,
+  .project-image-overlay,
+  .site-header,
+  .nav-menu,
+  .nav-toggle-lines,
+  .faq-plus,
+  .text-link span {
+    transition: none;
+  }
+
+  .btn:hover,
+  .card--interactive:hover {
+    transform: none;
+  }
+
+  .project-image-link:hover .project-image {
+    transform: none;
+  }
+
+  .project-image-overlay {
+    opacity: 1;
+  }
+
+  .text-link:hover span {
+    transform: none;
+  }
+}
