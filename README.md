@@ -41,7 +41,7 @@ The website focuses on modern UI design, responsive layouts, smooth navigation, 
 - Professional service presentation.
 - Portfolio project gallery with category filtering.
 - Contact information with email, phone, and WhatsApp links.
-- Netlify Forms-ready inquiry form.
+- Direct email inquiry form.
 - Inline validation and submission feedback.
 - Honeypot spam protection.
 - Search engine optimization metadata.
@@ -71,7 +71,8 @@ The website focuses on modern UI design, responsive layouts, smooth navigation, 
 | HTML5 | Semantic page structure and content |
 | CSS3 | Styling, responsive layouts, and animations |
 | Vanilla JavaScript | Navigation, filtering, FAQs, reveals, and form behavior |
-| Netlify | Website hosting and form handling |
+| Netlify | Static website hosting |
+| FormSubmit | Email delivery for contact submissions |
 | Git and GitHub | Version control and source management |
 
 No frontend framework or JavaScript library is required.
@@ -124,13 +125,14 @@ Tested viewport widths include 320px, 375px, 576px, 768px, 991px, 992px, 1280px,
 
 ## Contact System
 
-The contact form is configured for **Netlify Forms**. It includes:
+The contact form sends submissions directly to **developersauban12@outlook.com** through FormSubmit. It includes:
 
 - Required field validation.
 - Email format validation.
 - Inline error feedback.
 - Loading and duplicate-submission protection.
-- A Netlify honeypot field.
+- A honeypot spam field.
+- Reply-to email configuration.
 - Truthful local-preview and submission status messages.
 
 **Developer contact information**
@@ -140,17 +142,17 @@ The contact form is configured for **Netlify Forms**. It includes:
 - **Phone / WhatsApp:** [+92 313 5568768](tel:+923135568768)
 - **Availability:** Remote – Worldwide
 
-### Netlify email notifications
+### Email delivery activation
 
-Email notifications are configured in the Netlify dashboard, not in frontend source code:
+FormSubmit requires one-time activation for a destination email address:
 
-1. Deploy the site with Netlify Forms enabled.
-2. Open the site's **Forms** or **Site configuration → Forms** settings.
-3. Add an email notification for form `nexora-contact`.
-4. Use `developersauban12@outlook.com` as the recipient.
-5. Submit a test inquiry and verify that it appears in Netlify Forms and reaches the configured inbox.
+1. Deploy the website.
+2. Submit a test inquiry from the live contact page.
+3. Open the activation email sent to `developersauban12@outlook.com`.
+4. Activate the address through the link in that email.
+5. Submit another test inquiry and verify that it reaches the Outlook inbox.
 
-Actual email delivery must be confirmed through a deployed submission. It should not be assumed based on a successful frontend response alone.
+After activation, project submissions are delivered to the inbox with the visitor's email configured as the reply-to address.
 
 ---
 
@@ -174,7 +176,7 @@ Open `index.html` directly in a browser, or use a local static server such as VS
 
 For a local HTTP preview, use any static server available in your development environment.
 
-The contact form does not deliver email inquiries from a local preview. Deploy it to Netlify to test form capture.
+The JavaScript form can submit during a local preview when internet access is available. FormSubmit will still require first-time activation for the destination address.
 
 ---
 
@@ -190,7 +192,7 @@ To deploy your own copy:
 4. Set the publish directory to the project root.
 5. Leave the build command empty.
 6. Deploy the website.
-7. Configure Netlify Forms email notifications as described above.
+7. Activate the FormSubmit destination email as described above.
 
 No `netlify.toml` or build system is required for this static project.
 

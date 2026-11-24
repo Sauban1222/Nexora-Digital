@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitSpinner = form.querySelector("[data-submit-spinner]");
   const honeypot = form.elements.namedItem("bot-field");
   const submittedAt = form.elements.namedItem("submission-date-time-utc");
+  const replyTo = form.elements.namedItem("_replyto");
+  const emailField = form.elements.namedItem("email");
   let isSubmitting = false;
 
   form.noValidate = true;
@@ -89,11 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (window.location.protocol === "file:") {
-      showStatus("This local preview cannot deliver submissions. Deploy to Netlify with Forms enabled, then verify the submission there.", "error");
-      return;
-    }
-
     setSubmitting(true);
     showStatus("Sending your project inquiry...", "");
 
@@ -101,16 +98,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (submittedAt instanceof HTMLInputElement) {
         submittedAt.value = new Date().toISOString();
       }
+      if (replyTo instanceof HTMLInputElement && emailField instanceof HTMLInputElement) {
+        replyTo.value = emailField.value.trim();
+      }
 
-      const body = new URLSearchParams(new FormData(form)).toString();
-      const response = await fetch(form.action, {
+      const response = await fetch("https://formsubmit.co/ajax/developersauban12@outlook.com", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body
+        headers: { "Accept": "application/json" },
+        body: new FormData(form)
       });
 
       if (!response.ok) {
-        showStatus(`The form endpoint did not accept your submission (HTTP ${response.status}). Verify Netlify Forms is enabled on the deployed site and try again.`, "error");
+        showStatus(`The email service could not accept your submission (HTTP ${response.status}). Please try again.`, "error");
         return;
       }
 
@@ -123,9 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
           errorElement.hidden = true;
         }
       });
-      showStatus("Your inquiry was accepted by the form endpoint. Verify it in Netlify Forms; email delivery requires the notification to be configured in your site settings.", "success");
+      showStatus("Your inquiry was sent successfully. We’ll get back to you as soon as possible.", "success");
     } catch (error) {
-      showStatus("We couldn't confirm your submission. No success is recorded; verify Netlify Forms on the deployed site and try again.", "error");
+      showStatus("We couldn't confirm your submission. Please check your connection and try again.", "error");
     } finally {
       setSubmitting(false);
     }
